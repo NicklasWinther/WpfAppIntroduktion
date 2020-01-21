@@ -112,7 +112,21 @@ namespace WpfAppIntroduktion.BIZ
         }
 
         //Opgave 8
-        public List<String> 
+        public List<String> GetAverageAndSubtract()
+        {
+            List<int> numbers = GetRandomNumbers();
+            List<string> strings = new List<string>();
+            numbers.Sort();
+            int average = FindAverage(numbers);
+
+
+            foreach (int number in numbers)
+            {
+                strings.Add($"{number} - {average} = {number - average}");
+            }
+
+            return strings;
+        }
 
     }
 }

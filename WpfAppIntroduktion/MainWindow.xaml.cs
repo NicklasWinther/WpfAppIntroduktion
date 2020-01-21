@@ -28,6 +28,15 @@ namespace WpfAppIntroduktion
             InitializeComponent();
         }
 
+        private void ClearList(ListBox listBox)
+        {
+            if (listBox.ItemsSource != null)
+            {
+                listBox.ItemsSource = null;
+            }
+            listBox.Items.Clear();
+        }
+
         private void buttonOpg12_Click(object sender, RoutedEventArgs e)
         {
             listBoxRes.Items.Clear();
@@ -63,5 +72,12 @@ namespace WpfAppIntroduktion
             listBoxRes.Items.Clear();
             classBiz.GetAverageAndSubtract(listBoxRes);
         }
+
+        private void buttonOpg18_Click(object sender, RoutedEventArgs e)
+        {
+            ClearList(listBoxRes);
+            listBoxRes.ItemsSource = classBiz.GetAverageAndSubtract();
+        }
+
     }
 }
