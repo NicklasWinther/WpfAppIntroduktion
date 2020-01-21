@@ -39,37 +39,37 @@ namespace WpfAppIntroduktion
 
         private void buttonOpg12_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.Number4711(listBoxRes);
         }
 
         private void buttonOpg13_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.RandomNumbers(listBoxRes);
         }
 
         private void buttonOpg14_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.RandomSortedNumbers(listBoxRes);
         }
 
         private void buttonOpg15_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.RandomNumbersSortedAndUnsorted(listBoxRes);
         }
 
         private void buttonOpg16_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.GetAverage(listBoxRes);
         }
 
         private void buttonOpg17_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            ClearList(listBoxRes);
             classBiz.GetAverageAndSubtract(listBoxRes);
         }
 
@@ -79,5 +79,10 @@ namespace WpfAppIntroduktion
             listBoxRes.ItemsSource = classBiz.GetAverageAndSubtract();
         }
 
+        private void buttonOpg19_Click(object sender, RoutedEventArgs e)
+        {
+            ClearList(listBoxRes);
+            classBiz.GetAverageSubtractAndColor(listBoxRes);
+        }
     }
 }

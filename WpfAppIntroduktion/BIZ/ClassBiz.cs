@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace WpfAppIntroduktion.BIZ
 {
@@ -126,6 +127,28 @@ namespace WpfAppIntroduktion.BIZ
             }
 
             return strings;
+        }
+
+        //Opgave9
+        public void GetAverageSubtractAndColor(ListBox listBox)
+        {
+            List<int> numbers = GetRandomNumbers();
+            List<string> strings = new List<string>();
+            numbers.Sort();
+            int average = FindAverage(numbers);
+
+
+            foreach (int number in numbers)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                listBoxItem.Content = $"{number} - {average} = {number - average}";
+                if (number % 2 == 0)
+                    listBoxItem.Background = Brushes.HotPink;
+                else
+                    listBoxItem.Background = Brushes.AliceBlue;
+                listBox.Items.Add(listBoxItem);
+            }
+
         }
 
     }
