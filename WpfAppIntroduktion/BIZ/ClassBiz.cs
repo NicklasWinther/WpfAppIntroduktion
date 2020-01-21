@@ -43,7 +43,7 @@ namespace WpfAppIntroduktion.BIZ
             {
                 listBox.Items.Add(number.ToString());
             }
-            
+
         }
 
         //Opgave 4
@@ -105,7 +105,7 @@ namespace WpfAppIntroduktion.BIZ
             List<int> numbers = GetRandomNumbers();
             numbers.Sort();
             int average = FindAverage(numbers);
-            
+
             foreach (int number in numbers)
             {
                 listBox.Items.Add($"{number} - {average} = {number - average}");
@@ -133,7 +133,6 @@ namespace WpfAppIntroduktion.BIZ
         public void GetAverageSubtractAndColor(ListBox listBox)
         {
             List<int> numbers = GetRandomNumbers();
-            List<string> strings = new List<string>();
             numbers.Sort();
             int average = FindAverage(numbers);
 
@@ -151,5 +150,29 @@ namespace WpfAppIntroduktion.BIZ
 
         }
 
+        //Opgave10
+        public void GetAverageSubtractAndColorWithItemsSource(ListBox listBox)
+        {
+            List<int> numbers = GetRandomNumbers();
+            List<ListBoxItem> listBoxItems = new List<ListBoxItem>();
+            numbers.Sort();
+            int average = FindAverage(numbers);
+            
+
+            foreach (int number in numbers)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                listBoxItem.Content = $"{number} - {average} = {number - average}";
+
+                if (number % 2 == 0)
+                    listBoxItem.Background = Brushes.HotPink;
+                else
+                    listBoxItem.Background = Brushes.AliceBlue;
+
+                listBoxItems.Add(listBoxItem);
+            }
+
+            listBox.ItemsSource = listBoxItems;
+        }
     }
 }

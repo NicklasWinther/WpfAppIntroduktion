@@ -84,5 +84,11 @@ namespace WpfAppIntroduktion
             ClearList(listBoxRes);
             classBiz.GetAverageSubtractAndColor(listBoxRes);
         }
+
+        private void buttonOpg110_Click(object sender, RoutedEventArgs e)
+        {
+            ClearList(listBoxRes);
+            classBiz.GetAverageSubtractAndColorWithItemsSource(listBoxRes);
+        }
     }
 }

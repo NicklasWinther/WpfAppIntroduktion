@@ -95,7 +95,8 @@
                 VerticalAlignment="Stretch"
                 Grid.Column="0"
                 Grid.Row="8"
-                Margin="10" />
+                Margin="10"
+                Click="buttonOpg110_Click" />
 
         <ListBox x:Name="listBoxRes"
                  Grid.Column="1"
